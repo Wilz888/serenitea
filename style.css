@@ -519,67 +519,6 @@ section {
     margin-top: 2.5rem;
 }
 
-/* Tracking Section */
-.tracking-section {
-    background-color: var(--white);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    padding: 3rem;
-    margin-bottom: 2rem;
-}
-
-.tracking-container {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.tracking-form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.form-group {
-    flex: 1;
-    position: relative;
-    min-width: 250px;
-}
-
-.form-group i {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--text-light);
-}
-
-.tracking-form input {
-    width: 100%;
-    padding: 1rem 1rem 1rem 45px;
-    border: 1px solid #ddd;
-    border-radius: var(--border-radius);
-    font-size: 1rem;
-    transition: var(--transition);
-}
-
-.tracking-form input:focus {
-    border-color: var(--primary-color);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
-}
-
-.tracking-result {
-    background-color: var(--gray-light);
-    border-radius: var(--border-radius);
-    padding: 1.5rem;
-    display: none;
-}
-
-.tracking-result.active {
-    display: block;
-}
-
 /* Testimonial Section */
 .testimonial-section {
     background-color: var(--white);
@@ -647,101 +586,6 @@ section {
     align-items: center;
     justify-content: center;
     margin-top: 2rem;
-}
-
-.prev-btn,
-.next-btn {
-    background-color: var(--primary-light);
-    color: var(--primary-dark);
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.prev-btn:hover,
-.next-btn:hover {
-    background-color: var(--primary-color);
-    color: var(--white);
-}
-
-.testimonial-dots {
-    display: flex;
-    gap: 8px;
-    margin: 0 15px;
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: var(--primary-light);
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.dot.active {
-    background-color: var(--primary-color);
-    transform: scale(1.2);
-}
-
-/* Newsletter Section */
-.newsletter-section {
-    background: linear-gradient(rgba(76, 175, 80, 0.9), rgba(76, 175, 80, 0.9)), url('images/newsletter-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    color: var(--white);
-    text-align: center;
-    padding: 4rem 0;
-    border-radius: var(--border-radius);
-    margin-bottom: 2rem;
-}
-
-.newsletter-content {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.newsletter-content h2 {
-    margin-bottom: 1rem;
-    font-size: 2rem;
-}
-
-.newsletter-content p {
-    margin-bottom: 2rem;
-    opacity: 0.9;
-}
-
-.newsletter-form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.newsletter-form input {
-    flex: 1;
-    min-width: 250px;
-    padding: 1rem 1.5rem;
-    border: none;
-    border-radius: 30px;
-    font-size: 1rem;
-}
-
-.newsletter-form input:focus {
-    outline: none;
-}
-
-.newsletter-form button {
-    min-width: 150px;
-    border-radius: 30px;
 }
 
 /* Footer */
@@ -972,7 +816,6 @@ footer {
 
     Copy.welcome-section,
     .products-section,
-    .tracking-section,
     .testimonial-section {
         padding: 2rem 1.5rem;
     }
@@ -988,4 +831,74 @@ footer {
     .footer-bottom {
         flex-direction: column;
     }
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #666;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  color: #000;
+}
+
+.modal-product-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.modal-product-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.modal-product-rating {
+  color: #f8ce0b;
+  margin-bottom: 10px;
+}
+
+.modal-product-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #4CAF50;
+  margin-bottom: 15px;
+}
+
+.modal-product-description {
+  margin-bottom: 15px;
+  line-height: 1.6;
 }

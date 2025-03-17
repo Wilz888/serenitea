@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serenitea - Kontak</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Retain only the main content styles from the original contact.php */
+        /* Header and footer styles */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            box-shadow: var(--shadow);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 0.5rem 0;
+            background-color: rgba(76, 175, 80, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .brand-logo {
+            width: 60px;
+            height: 60px;
+            margin-right: 15px;
+            object-fit: contain;
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 5px;
+            background-color: var(--white);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.1rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            color: var(--white);
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-list li {
+            margin: 0 12px;
+        }
+
+        .nav-list a {
+            color: var(--white);
+            padding: 0.5rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-list a i {
+            margin-right: 5px;
+        }
+
+        .nav-list a:hover,
+        .nav-list a.active {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .contact-section {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
+
+        .section-title {
+            color: #4CAF50;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 3px;
+            background-color: #4CAF50;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h3 {
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+
+        .info-item {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .info-icon {
+            background-color: #e8f5e9;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 1rem;
+            color: #4CAF50;
+            font-size: 1.2rem;
+        }
+
+        .info-text {
+            flex: 1;
+        }
+
+        .info-text h4 {
+            margin-bottom: 0.3rem;
+        }
+
+        .map-container {
+            margin-top: 2rem;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 300px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <div class="logo-container">
+                    <img src="images/sereni.png" alt="Serenitea Logo" class="brand-logo">
+                    <div class="brand-text">
+                        <h1 class="logo">Serenitea</h1>
+                        <div class="tagline">Nikmati Sensasi Kesegaran Alami</div>
+                    </div>
+                </div>
+                <nav id="main-nav">
+                    <div class="menu-toggle" id="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+                        <li><a href="index.html#products"><i class="fas fa-leaf"></i> Produk</a></li>
+                        <li><a href="about.html"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> Kontak</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="contact-section">
+                <h2 class="section-title">Hubungi Kami</h2>
+
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Informasi Kontak</h3>
+
+                        <div class="info-item">
+                            <div class="info-icon">📍</div>
+                            <div class="info-text">
+                                <h4>Alamat</h4>
+                                <p>Jl. Teh Hijau No. 123, Jakarta Selatan</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">📞</div>
+                            <div class="info-text">
+                                <h4>Telepon</h4>
+                                <p>+62 812 3456 7890</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">✉️</div>
+                            <div class="info-text">
+                                <h4>Email</h4>
+                                <p>info@serenitea.id</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">🕒</div>
+                            <div class="info-text">
+                                <h4>Jam Buka</h4>
+                                <p>Senin - Jumat: 08.00 - 20.00</p>
+                                <p>Sabtu - Minggu: 10.00 - 22.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0660870619395!2d106.83009937587656!3d-6.2602405620640865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTUnMzYuOSJTIDEwNsKwNDknNTAuMiJF!5e0!3m2!1sid!2sid!4v1631234567890!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>Tentang Serenitea</h3>
+                    <p>Serenitea adalah brand minuman teh premium yang menyajikan pengalaman menikmati teh dengan cara yang
+                        berbeda.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/sereniitea.co"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section contact">
+                    <h3>Kontak Kami</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Jl. Teh Hijau No. 123, Jakarta</p>
+                        <p><i class="fas fa-phone-alt"></i> +62 812 3456 7890</p>
+                        <p><i class="fas fa-envelope"></i> info@serenitea.id</p>
+                        <p><i class="fas fa-clock"></i> Senin - Jumat: 9:00 - 17:00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <?php echo date('Y'); ?> Serenitea. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

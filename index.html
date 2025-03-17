@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serenitea - Produk</title>
+    <title>Serenitea</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,10 +18,10 @@
         <div class="container">
             <div class="header-container">
                 <div class="logo-container">
-                    <img src="images/sereni1.jpg" alt="Serenitea Logo" class="brand-logo">
+                    <img src="images/sereni.png" alt="Serenitea Logo" class="brand-logo">
                     <div class="brand-text">
                         <h1 class="logo">Serenitea</h1>
-                        <div class="tagline">Shoote Your Soul, Heal Your Body</div>
+                        <div class="tagline">Nikmati Sensasi Kesegaran Alami</div>
                     </div>
                 </div>
                 <nav id="main-nav">
@@ -29,10 +29,10 @@
                         <i class="fas fa-bars"></i>
                     </div>
                     <ul class="nav-list">
-                        <li><a href="index.html" class="active"><i class="fas fa-home"></i> Beranda</a></li>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
                         <li><a href="#products"><i class="fas fa-leaf"></i> Produk</a></li>
-                        <li><a href="#"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
-                        <li><a href="#"><i class="fas fa-envelope"></i> Kontak</a></li>
+                        <li><a href="about.html"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> Kontak</a></li>
                     </ul>
                 </nav>
             </div>
@@ -95,9 +95,9 @@
                     <div class="product-card" data-category="green">
                         <div class="product-badge">Terlaris</div>
                         <div class="product-image">
-                            <img src="images/product1.png" alt="Green Tea Premium">
+                            <img src="images/product1.png" alt="Liang Teh Ori">
                             <div class="product-overlay">
-                                <a href="product_detail.html?id=1" class="btn-view">Lihat Detail</a>
+                                <a href="#" class="btn-view" onclick="openProductModal('liang-teh-ori')">Lihat Detail</a>
                             </div>
                         </div>
                         <div class="product-info">
@@ -115,13 +115,13 @@
                             <p class="product-price">Rp 50.000</p>
                         </div>
                     </div>
-
+            
                     <!-- Product 2 -->
                     <div class="product-card" data-category="black">
                         <div class="product-image">
                             <img src="images/product2.jpg" alt="Liang Teh Gula Batu">
                             <div class="product-overlay">
-                                <a href="product_detail.html?id=2" class="btn-view">Lihat Detail</a>
+                                <a href="#" class="btn-view" onclick="openProductModal('liang-teh-gula-batu')">Lihat Detail</a>
                             </div>
                         </div>
                         <div class="product-info">
@@ -139,14 +139,14 @@
                             <p class="product-price">Rp 45.000</p>
                         </div>
                     </div>
-
+            
                     <!-- Product 3 -->
                     <div class="product-card" data-category="infusion">
                         <div class="product-badge">Baru</div>
                         <div class="product-image">
                             <img src="images/product3.jpg" alt="Liang teh Madu">
                             <div class="product-overlay">
-                                <a href="product_detail.html?id=3" class="btn-view">Lihat Detail</a>
+                                <a href="#" class="btn-view" onclick="openProductModal('liang-teh-madu')">Lihat Detail</a>
                             </div>
                         </div>
                         <div class="product-info">
@@ -164,13 +164,13 @@
                             <p class="product-price">Rp 55.000</p>
                         </div>
                     </div>
-
+            
                     <!-- Product 4 -->
                     <div class="product-card" data-category="green">
                         <div class="product-image">
-                            <img src="images/product4.jpg" alt="Jasmine Green Tea">
+                            <img src="images/product4.jpg" alt="Lohankuo Jelly">
                             <div class="product-overlay">
-                                <a href="product_detail.html?id=4" class="btn-view">Lihat Detail</a>
+                                <a href="#" class="btn-view" onclick="openProductModal('lohankuo-jelly')">Lihat Detail</a>
                             </div>
                         </div>
                         <div class="product-info">
@@ -190,6 +190,16 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Modal Container -->
+            <div id="productModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <div id="modalContent">
+                        <!-- Content will be loaded here dynamically -->
+                    </div>
+                </div>
+            </div>
 
             <section class="testimonial-section">
                 <h2 class="section-title">Apa Kata Pelanggan Kami</h2>
@@ -286,3 +296,4 @@
                                         <p>&copy; 2025 Serenitea. Hak Cipta Dilindungi.</p
                                     </div>
                                     </div>
+                                    <script src="script.js"></script>
