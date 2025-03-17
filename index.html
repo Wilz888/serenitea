@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serenitea - Produk</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <div class="logo-container">
+                    <img src="images/sereni.png" alt="Serenitea Logo" class="brand-logo">
+                    <div class="brand-text">
+                        <h1 class="logo">Serenitea</h1>
+                        <div class="tagline">Nikmati Sensasi Kesegaran Alami</div>
+                    </div>
+                </div>
+                <nav id="main-nav">
+                    <div class="menu-toggle" id="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="active"><i class="fas fa-home"></i> Beranda</a></li>
+                        <li><a href="#products"><i class="fas fa-leaf"></i> Produk</a></li>
+                        <li><a href="#"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> Kontak</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero"
+        style="background-image: url('images/teh.jpg'); background-size: cover; background-position: center; position: relative;">
+        <div class="overlay"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);">
+        </div>
+        <div class="hero-content container"
+            style="position: relative; z-index: 1; color: white; padding: 100px 20px; text-align: center;">
+            <h1>Temukan Keaslian dalam Setiap Tegukan</h1>
+            <p>Teh premium berkualitas tinggi dengan bahan alami terbaik</p>
+            <a href="#products" class="btn-primary">Jelajahi Produk <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <main>
+        <div class="container">
+            <section class="welcome-section">
+                <h2 class="section-title">Selamat Datang di Serenitea</h2>
+                <div class="welcome-content">
+                    <div class="welcome-text">
+                        <p>Serenitea hadir untuk memberikan pengalaman menikmati teh berkualitas premium dengan cita
+                            rasa yang autentik dan menyegarkan. Dibuat dari daun teh pilihan dan bahan-bahan alami
+                            berkualitas tinggi.</p>
+                        <p>Nikmati berbagai varian teh kami yang diproses dengan standar kualitas terbaik untuk
+                            menghadirkan kesegaran alami dalam setiap tegukan.</p>
+                        <div class="welcome-features">
+                            <div class="feature">
+                                <i class="fas fa-leaf"></i>
+                                <h3>Daun Teh Premium</h3>
+                                <p>Dipetik langsung dari kebun teh terbaik</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-tint"></i>
+                                <h3>Proses Natural</h3>
+                                <p>Tanpa bahan pengawet dan pewarna buatan</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-box"></i>
+                                <h3>Kemasan Ramah Lingkungan</h3>
+                                <p>Mendukung gaya hidup berkelanjutan</p>
+                            </div>
+                        </div>
+                        <a href="#products" class="btn-primary">Lihat Produk Kami <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="welcome-image">
+                        <img src="images/kebun.jpg" alt="Tea Ceremony">
+                    </div>
+                </div>
+            </section>
+
+            <section class="products-section" id="products">
+                <h2 class="section-title">Produk Kami</h2>
+                <div class="products-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card" data-category="green">
+                        <div class="product-badge">Terlaris</div>
+                        <div class="product-image">
+                            <img src="images/product1.png" alt="Green Tea Premium">
+                            <div class="product-overlay">
+                                <a href="product_detail.html?id=1" class="btn-view">Lihat Detail</a>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Liang Teh Ori</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(4.5)</span>
+                            </div>
+                            <p class="product-description">Teh hijau premium dengan aroma yang menenangkan dan rasa yang
+                                menyegarkan.</p>
+                            <p class="product-price">Rp 50.000</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card" data-category="black">
+                        <div class="product-image">
+                            <img src="images/product2.jpg" alt="Liang Teh Gula Batu">
+                            <div class="product-overlay">
+                                <a href="product_detail.html?id=2" class="btn-view">Lihat Detail</a>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Liang Teh Gula Batu</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(4.0)</span>
+                            </div>
+                            <p class="product-description">Teh hitam klasik dengan cita rasa kuat dan aroma yang khas.
+                            </p>
+                            <p class="product-price">Rp 45.000</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card" data-category="infusion">
+                        <div class="product-badge">Baru</div>
+                        <div class="product-image">
+                            <img src="images/product3.jpg" alt="Liang teh Madu">
+                            <div class="product-overlay">
+                                <a href="product_detail.html?id=3" class="btn-view">Lihat Detail</a>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Liang Teh Madu</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(5.0)</span>
+                            </div>
+                            <p class="product-description">Infusi teh dengan kombinasi lemon dan jahe yang menyegarkan
+                                dan menyehatkan.</p>
+                            <p class="product-price">Rp 55.000</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card" data-category="green">
+                        <div class="product-image">
+                            <img src="images/product4.jpg" alt="Jasmine Green Tea">
+                            <div class="product-overlay">
+                                <a href="product_detail.html?id=4" class="btn-view">Lihat Detail</a>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Lohankuo Jelly</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(4.0)</span>
+                            </div>
+                            <p class="product-description">Teh hijau dengan aroma melati yang menenangkan dan rasa yang
+                                lembut.</p>
+                            <p class="product-price">Rp 52.000</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="testimonial-section">
+                <h2 class="section-title">Apa Kata Pelanggan Kami</h2>
+                <div class="testimonial-slider">
+                    <div class="testimonial-item">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Teh terbaik yang pernah saya coba. Rasanya sangat autentik dan
+                            aromanya menenangkan. Saya sudah menjadi pelanggan setia Serenitea selama setahun terakhir."
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="images/avatar1.jpg" alt="Avatar" class="testimonial-avatar">
+                            <div>
+                                <h4>Anisa Wijaya</h4>
+                                <p>Jakarta</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-item">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-text">"Green Tea Premium dari Serenitea selalu menjadi pilihan saya untuk
+                            memulai hari. Kualitasnya konsisten dan pelayanannya sangat memuaskan."</p>
+                        <div class="testimonial-author">
+                            <img src="images/avatar2.png" alt="Avatar" class="testimonial-avatar">
+                            <div>
+                                <h4>Budi Santoso</h4>
+                                <p>Bandung</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-item">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Saya sangat senang dengan varian Lemon Ginger Infusion. Selain
+                            rasanya enak, juga membantu menjaga kesehatan saya. Kemasan produknya juga sangat ramah
+                            lingkungan."</p>
+                        <div class="testimonial-author">
+                            <img src="images/avatar3.png" alt="Avatar" class="testimonial-avatar">
+                            <div>
+                                <h4>Dina Pratiwi</h4>
+                                <p>Surabaya</p>
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+                        </section>
+                        </div>
+                        </main>
+                        <footer>
+                            <div class="container">
+                                <div class="footer-content">
+                                    <div class="footer-section about">
+                                        <h3>Tentang Serenitea</h3>
+                                        <p>Serenitea adalah brand minuman teh premium yang menyajikan pengalaman menikmati teh dengan cara yang
+                                            berbeda.</p>
+                                        <div class="social-links">
+                                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                            <a href="https://www.instagram.com/sereniitea.co"><i class="fab fa-instagram"></i></a>
+                                            <a href="#"><i class="fab fa-youtube"></i></a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="footer-section contact">
+                                        <h3>Kontak Kami</h3>
+                                        <div class="contact-info">
+                                            <p><i class="fas fa-map-marker-alt"></i> Jl. Teh Hijau No. 123, Jakarta</p>
+                                            <p><i class="fas fa-phone-alt"></i> +62 812 3456 7890</p>
+                                            <p><i class="fas fa-envelope"></i> info@serenitea.id</p>
+                                            <p><i class="fas fa-clock"></i> Senin - Jumat: 9:00 - 17:00</p>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    
+                                    <div class="footer-bottom">
+                                        <p>&copy; 2025 Serenitea. Hak Cipta Dilindungi.</p
+                                    </div>
+                                    </div>
