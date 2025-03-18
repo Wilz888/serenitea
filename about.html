@@ -310,20 +310,19 @@
                 top: 100%;
                 left: 0;
                 right: 0;
-                background-color: white;
+                background-color: var(--primary-color);
                 flex-direction: column;
                 padding: 1rem 0;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                display: none;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: var(--transition);
             }
 
             .nav-list.active {
-                display: flex;
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
             }
 
             .nav-list li {
                 margin: 0.5rem 0;
-                text-align: center;
             }
         }
 
@@ -357,7 +356,7 @@
                     <div class="menu-toggle" id="menu-toggle">
                         <i class="fas fa-bars"></i>
                     </div>
-                    <ul class="nav-list" id="nav-list">
+                    <ul class="nav-list">
                         <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
                         <li><a href="index.html#products"><i class="fas fa-leaf"></i> Produk</a></li>
                         <li><a href="about.html"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
@@ -464,5 +463,5 @@
         </div>
     </footer>
 </body>
-
+<script src="script.js"></script>
 </html>

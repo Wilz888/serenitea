@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         /* Retain only the main content styles from the original contact.php */
         /* Header and footer styles */
@@ -190,6 +191,33 @@
                 flex-direction: column;
             }
         }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-list {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--primary-color);
+                flex-direction: column;
+                padding: 1rem 0;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: var(--transition);
+            }
+
+            .nav-list.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+
+            .nav-list li {
+                margin: 0.5rem 0;
+            }
+        }
     </style>
 </head>
 
@@ -301,7 +329,7 @@
             </div>
         </div>
     </footer>
-    <script src="script.js"></script>
+   
 </body>
-
+<script src="script.js"></script>
 </html>

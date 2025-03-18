@@ -39,16 +39,46 @@
         </div>
     </header>
 
-    <section class="hero"
-        style="background-image: url('images/teh.jpg'); background-size: cover; background-position: center; position: relative;">
-        <div class="overlay"
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);">
-        </div>
-        <div class="hero-content container"
-            style="position: relative; z-index: 1; color: white; padding: 100px 20px; text-align: center;">
-            <h1>Temukan Keaslian dalam Setiap Tegukan</h1>
-            <p>Teh premium berkualitas tinggi dengan bahan alami terbaik</p>
-            <a href="#products" class="btn-primary">Jelajahi Produk <i class="fas fa-arrow-right"></i></a>
+    <section class="hero-carousel">
+        <div class="carousel-container">
+            <!-- Slide 1 -->
+            <div class="carousel-slide active" style="background-image: url('images/teh.jpg');">
+                <div class="overlay"></div>
+                <div class="hero-content container">
+                    <h1>Temukan Keaslian dalam Setiap Tegukan</h1>
+                    <p>Teh premium berkualitas tinggi dengan bahan alami terbaik</p>
+                    <a href="#products" class="btn-primary">Jelajahi Produk <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="carousel-slide" style="background-image: url('images/kebun.jpg');">
+                <div class="overlay"></div>
+                <div class="hero-content container">
+                    <h1>Kualitas Terbaik dari Kebun Terpilih</h1>
+                    <p>Dipetik langsung dari kebun teh terbaik di Indonesia</p>
+                    <a href="#products" class="btn-primary">Jelajahi Produk <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="carousel-slide" style="background-image: url('images/product1.png');">
+                <div class="overlay"></div>
+                <div class="hero-content container">
+                    <h1>Nikmati Sensasi Kesegaran Alami</h1>
+                    <p>Tanpa bahan pengawet dan pewarna buatan</p>
+                    <a href="#products" class="btn-primary">Jelajahi Produk <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- Carousel Navigation -->
+            <div class="carousel-nav">
+                <div class="carousel-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -95,7 +125,7 @@
                     <div class="product-card" data-category="green">
                         <div class="product-badge">Terlaris</div>
                         <div class="product-image">
-                            <img src="images/product1.png" alt="Liang Teh Ori">
+                            <img src="images/product1.png" alt="Liang Teh Ori" loading="lazy">
                             <div class="product-overlay">
                                 <a href="#" class="btn-view" onclick="openProductModal('liang-teh-ori')">Lihat Detail</a>
                             </div>
@@ -204,96 +234,307 @@
             <section class="testimonial-section">
                 <h2 class="section-title">Apa Kata Pelanggan Kami</h2>
                 <div class="testimonial-slider">
-                    <div class="testimonial-item">
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Teh terbaik yang pernah saya coba. Rasanya sangat autentik dan
-                            aromanya menenangkan. Saya sudah menjadi pelanggan setia Serenitea selama setahun terakhir."
-                        </p>
-                        <div class="testimonial-author">
-                            <img src="images/avatar1.jpg" alt="Avatar" class="testimonial-avatar">
-                            <div>
-                                <h4>Anisa Wijaya</h4>
-                                <p>Jakarta</p>
+                    <!-- Slide 1 -->
+                    <div class="testimonial-slide active">
+                        <div class="testimonial-grid">
+                            <!-- Testimonial 1 -->
+                            <div class="testimonial-item">
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="testimonial-text">
+                                    "Teh terbaik yang pernah saya coba. Rasanya sangat autentik dan aromanya menenangkan."
+                                </p>
+                                <div class="testimonial-author">
+                                    <img src="images/avatar1.jpg" alt="Avatar" class="testimonial-avatar">
+                                    <div>
+                                        <h4>Anisa Wijaya</h4>
+                                        <p>Jakarta</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Testimonial 2 -->
+                            <div class="testimonial-item">
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <p class="testimonial-text">
+                                    "Green Tea Premium dari Serenitea selalu menjadi pilihan saya untuk memulai hari."
+                                </p>
+                                <div class="testimonial-author">
+                                    <img src="images/avatar2.png" alt="Avatar" class="testimonial-avatar">
+                                    <div>
+                                        <h4>Budi Santoso</h4>
+                                        <p>Bandung</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Testimonial 3 -->
+                            <div class="testimonial-item">
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="testimonial-text">
+                                    "Saya sangat senang dengan varian Lemon Ginger Infusion. Rasanya enak dan menyehatkan."
+                                </p>
+                                <div class="testimonial-author">
+                                    <img src="images/avatar3.png" alt="Avatar" class="testimonial-avatar">
+                                    <div>
+                                        <h4>Dina Pratiwi</h4>
+                                        <p>Surabaya</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Testimonial 4 -->
+                            <div class="testimonial-item">
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="testimonial-text">
+                                    "Teh Serenitea selalu segar dan nikmat. Saya suka varian teh hijau mereka."
+                                </p>
+                                <div class="testimonial-author">
+                                    <img src="images/avatar4.jpg" alt="Avatar" class="testimonial-avatar">
+                                    <div>
+                                        <h4>Rina Amelia</h4>
+                                        <p>Yogyakarta</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="testimonial-item">
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <p class="testimonial-text">"Green Tea Premium dari Serenitea selalu menjadi pilihan saya untuk
-                            memulai hari. Kualitasnya konsisten dan pelayanannya sangat memuaskan."</p>
-                        <div class="testimonial-author">
-                            <img src="images/avatar2.png" alt="Avatar" class="testimonial-avatar">
-                            <div>
-                                <h4>Budi Santoso</h4>
-                                <p>Bandung</p>
+            
+                    <!-- Slide 2 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-grid">
+                            <!-- Testimonial 5 -->
+                            <div class="testimonial-item">
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="testimonial-text">
+                                    "Saya suka kemasan ramah lingkungan dari Serenitea. Tehnya juga sangat berkualitas."
+                                </p>
+                                <div class="testimonial-author">
+                                    <img src="images/avatar5.jpg" alt="Avatar" class="testimonial-avatar">
+                                    <div>
+                                        <h4>Agus Setiawan</h4>
+                                        <p>Semarang</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Testimonial 6 -->
+                            <div class="testimonial-item">
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="testimonial-text">
+                                    "Teh Serenitea selalu menjadi teman setia saya saat bekerja. Rasanya menenangkan dan menyegarkan."
+                                </p>
+                                <div class="testimonial-author">
+                                    <img src="images/avatar6.jpg" alt="Avatar" class="testimonial-avatar">
+                                    <div>
+                                        <h4>Lina Marlina</h4>
+                                        <p>Medan</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Testimonial 7 -->
+                            <div class="testimonial-item">
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="testimonial-text">
+                                    "Saya selalu membeli teh Serenitea untuk keluarga. Anak-anak saya juga suka!"
+                                </p>
+                                <div class="testimonial-author">
+                                    <img src="images/avatar7.jpg" alt="Avatar" class="testimonial-avatar">
+                                    <div>
+                                        <h4>Rudi Hermawan</h4>
+                                        <p>Malang</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Testimonial 8 -->
+                            <div class="testimonial-item">
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <p class="testimonial-text">
+                                    "Teh Serenitea sangat cocok untuk dinikmati di pagi hari. Rasanya segar dan menyehatkan."
+                                </p>
+                                <div class="testimonial-author">
+                                    <img src="images/avatar8.jpg" alt="Avatar" class="testimonial-avatar">
+                                    <div>
+                                        <h4>Siti Rahayu</h4>
+                                        <p>Palembang</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="testimonial-item">
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Saya sangat senang dengan varian Lemon Ginger Infusion. Selain
-                            rasanya enak, juga membantu menjaga kesehatan saya. Kemasan produknya juga sangat ramah
-                            lingkungan."</p>
-                        <div class="testimonial-author">
-                            <img src="images/avatar3.png" alt="Avatar" class="testimonial-avatar">
-                            <div>
-                                <h4>Dina Pratiwi</h4>
-                                <p>Surabaya</p>
+            
+                    <!-- Slide 3 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-grid">
+                            <!-- Testimonial 9 -->
+                            <div class="testimonial-item">
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="testimonial-text">
+                                    "Saya sangat merekomendasikan Serenitea kepada teman-teman saya. Kualitasnya tidak perlu diragukan lagi."
+                                </p>
+                                <div class="testimonial-author">
+                                    <img src="images/avatar1.jpg" alt="Avatar" class="testimonial-avatar">
+                                    <div>
+                                        <h4>Andi Pratama</h4>
+                                        <p>Makassar</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Testimonial 10 -->
+                            <div class="testimonial-item">
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="testimonial-text">
+                                    "Saya sangat merekomendasikan Serenitea kepada teman-teman saya. Kualitasnya tidak perlu diragukan lagi."
+                                </p>
+                                <div class="testimonial-author">
+                                    <img src="images/avatar3.png" alt="Avatar" class="testimonial-avatar">
+                                    <div>
+                                        <h4>Andi Pratama</h4>
+                                        <p>Makassar</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Testimonial 11 -->
+                            <div class="testimonial-item">
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="testimonial-text">
+                                    "Saya sangat merekomendasikan Lohankuo Sangat Mantap Rasanya."
+                                </p>
+                                <div class="testimonial-author">
+                                    <img src="images/avatar2.png" alt="Avatar" class="testimonial-avatar">
+                                    <div>
+                                        <h4>Andi Pratama</h4>
+                                        <p>Makassar</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Testimonial 12 -->
+                            <div class="testimonial-item">
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="testimonial-text">
+                                    "Rasanya sangat mantap menyejukkan badan."
+                                </p>
+                                <div class="testimonial-author">
+                                    <img src="images/avatar1.jpg" alt="Avatar" class="testimonial-avatar">
+                                    <div>
+                                        <h4>Andi Pratama</h4>
+                                        <p>Makassar</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        </div>
-                        </div>
-                        </section>
-                        </div>
-                        </main>
-                        <footer>
-                            <div class="container">
-                                <div class="footer-content">
-                                    <div class="footer-section about">
-                                        <h3>Tentang Serenitea</h3>
-                                        <p>Serenitea adalah brand minuman teh premium yang menyajikan pengalaman menikmati teh dengan cara yang
-                                            berbeda.</p>
-                                        <div class="social-links">
-                                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                            <a href="#"><i class="fab fa-twitter"></i></a>
-                                            <a href="https://www.instagram.com/sereniitea.co"><i class="fab fa-instagram"></i></a>
-                                            <a href="#"><i class="fab fa-youtube"></i></a>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="footer-section contact">
-                                        <h3>Kontak Kami</h3>
-                                        <div class="contact-info">
-                                            <p><i class="fas fa-map-marker-alt"></i> Jl. Teh Hijau No. 123, Jakarta</p>
-                                            <p><i class="fas fa-phone-alt"></i> +62 812 3456 7890</p>
-                                            <p><i class="fas fa-envelope"></i> info@serenitea.id</p>
-                                            <p><i class="fas fa-clock"></i> Senin - Jumat: 9:00 - 17:00</p>
-                                        </div>
-                                    </div>
-                                    </div>
-                                    
-                                    <div class="footer-bottom">
-                                        <p>&copy; 2025 Serenitea. Hak Cipta Dilindungi.</p
-                                    </div>
-                                    </div>
-                                    <script src="script.js"></script>
+                    </div>
+                </div>
+            
+                <!-- Navigation Dots -->
+                <div class="slider-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>Tentang Serenitea</h3>
+                    <p>Serenitea adalah brand minuman teh premium yang menyajikan pengalaman menikmati teh dengan cara yang
+                        berbeda.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/sereniitea.co"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section contact">
+                    <h3>Kontak Kami</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Jl. Teh Hijau No. 123, Jakarta</p>
+                        <p><i class="fas fa-phone-alt"></i> +62 812 3456 7890</p>
+                        <p><i class="fas fa-envelope"></i> info@serenitea.id</p>
+                        <p><i class="fas fa-clock"></i> Senin - Jumat: 9:00 - 17:00</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Serenitea. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </footer>
+</body>
+
+</html>

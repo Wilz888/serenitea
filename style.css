@@ -77,6 +77,7 @@ img {
     background-color: var(--primary-dark);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(76, 175, 80, 0.4);
+    transition: all 0.3s ease;
 }
 
 .btn-secondary {
@@ -93,7 +94,7 @@ img {
 
 /* Header */
 header {
-    background-color: var(--primary-color);
+    background-color: rgba(76, 175, 80, 0.9); /* Warna dengan transparansi */
     color: var(--white);
     padding: 1rem 0;
     box-shadow: var(--shadow);
@@ -101,7 +102,8 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
-    transition: var(--transition);
+    transition: background-color 0.3s ease;
+    backdrop-filter: blur(10px); /* Efek blur */
 }
 
 header.scrolled {
@@ -160,7 +162,7 @@ header.scrolled {
     padding: 0.5rem 0.8rem;
     border-radius: 20px;
     font-weight: 500;
-    transition: var(--transition);
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
 }
@@ -173,12 +175,14 @@ header.scrolled {
 .nav-list a.active {
     background-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan saat hover */
 }
 
 .menu-toggle {
     display: none;
-    font-size: 1.5rem;
     cursor: pointer;
+    font-size: 24px;
+    color: #333;
 }
 
 /* Hero Section */
@@ -341,43 +345,22 @@ section {
     margin-bottom: 2rem;
 }
 
-.products-filter {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.filter-btn {
-    padding: 0.5rem 1.5rem;
-    background-color: transparent;
-    border: 1px solid var(--primary-color);
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: var(--transition);
-    color: var(--primary-color);
-}
-
-.filter-btn:hover,
-.filter-btn.active {
-    background-color: var(--primary-color);
-    color: var(--white);
-}
-
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
     gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .product-card {
+    height: 100%;
     background-color: var(--white);
     border-radius: var(--border-radius);
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    transition: var(--transition);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan halus */
     position: relative;
     display: flex;
     flex-direction: column;
@@ -502,36 +485,83 @@ section {
     font-size: 1.1rem;
 }
 
-.product-actions {
-    display: flex;
-    gap: 0.8rem;
-}
-
-.product-actions a {
-    flex: 1;
-    padding: 0.5rem;
-    font-size: 0.9rem;
-    text-align: center;
-}
-
-.products-more {
-    text-align: center;
-    margin-top: 2.5rem;
-}
-
 /* Testimonial Section */
 .testimonial-section {
     background-color: var(--white);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
-    padding: 3rem;
+    padding: 3rem 1.5rem; /* Reduced side padding for mobile */
     margin-bottom: 2rem;
 }
 
 .testimonial-slider {
     position: relative;
-    max-width: 900px;
-    margin: 0 auto;
+    overflow: hidden;
+    width: 100%;
+    min-height: 200px; /* Base height, will expand with content */
+}
+
+.testimonial-slide {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    pointer-events: none;
+}
+
+.testimonial-slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    position: relative;
+    pointer-events: auto;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns by default */
+    gap: 20px;
+    padding: 10px;
+}
+
+/* Responsive grid - switch to 1 column on mobile */
+@media (max-width: 768px) {
+    .testimonial-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+    
+    .testimonial-section {
+        padding: 2rem 1rem; /* Further reduce padding on mobile */
+    }
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    .welcome-content {
+        flex-direction: column;
+    }
+    .welcome-image {
+        order: -1;
+    }
+}
+
+/* Even smaller screens */
+@media (max-width: 480px) {
+    .testimonial-section {
+        padding: 1.5rem 0.75rem;
+    }
+    
+    .testimonial-item {
+        padding: 1rem;
+    }
+    
+    .testimonial-text {
+        font-size: 1rem;
+    }
+    
+    .testimonial-avatar {
+        width: 60px;
+        height: 60px;
+    }
 }
 
 .testimonial-item {
@@ -540,7 +570,23 @@ section {
     background-color: var(--gray-light);
     border-radius: var(--border-radius);
     margin: 0 auto;
-    max-width: 700px;
+    margin-bottom: 20px;
+    max-width: 100%; /* Allow to fill available space */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Disable hover effect on touch devices */
+@media (hover: none) {
+    .testimonial-item:hover {
+        transform: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 }
 
 .testimonial-rating {
@@ -561,14 +607,23 @@ section {
     align-items: center;
     justify-content: center;
     gap: 15px;
+    flex-wrap: wrap; /* Allow wrapping on very small screens */
+}
+
+/* Adjust author info on very small screens */
+@media (max-width: 360px) {
+    .testimonial-author {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
 .testimonial-avatar {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--primary-light);
+    border: 3px solid #4CAF50;
 }
 
 .testimonial-author h4 {
@@ -586,6 +641,42 @@ section {
     align-items: center;
     justify-content: center;
     margin-top: 2rem;
+}
+
+.slider-dots {
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.slider-dots .dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Make dots larger on touch devices for easier tapping */
+@media (max-width: 768px) {
+    .slider-dots .dot {
+        height: 12px;
+        width: 12px;
+        margin: 0 8px;
+    }
+}
+
+.slider-dots .dot:hover {
+    transform: scale(1.2);
+}
+
+.slider-dots .dot.active {
+    background-color: #4CAF50 !important;
+    transform: scale(1.3);
 }
 
 /* Footer */
@@ -699,21 +790,6 @@ footer {
     opacity: 0.7;
 }
 
-.footer-payment {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.footer-payment span {
-    opacity: 0.7;
-    font-size: 0.9rem;
-}
-
-.footer-payment img {
-    height: 30px;
-}
-
 /* Back to Top */
 .back-to-top {
     position: fixed;
@@ -797,15 +873,8 @@ footer {
     }
 
     .products-grid {
-        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-    }
-
-    .tracking-form {
-        flex-direction: column;
-    }
-
-    .newsletter-form {
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
     }
 }
 
@@ -901,4 +970,145 @@ footer {
 .modal-product-description {
   margin-bottom: 15px;
   line-height: 1.6;
+}
+
+/* Hero Carousel Styles */
+.hero-carousel {
+    height: 100vh;
+    min-height: 500px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 70px;
+}
+
+.carousel-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    border-radius: 20px 20px 20px 20px; /* Sudut atas kiri dan kanan melengkung */
+    overflow: hidden;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease-out 0.3s;
+    animation-fill-mode: both;
+}
+
+.hero-content .btn-primary {
+    animation: fadeInUp 1s ease-out 0.6s;
+    animation-fill-mode: both;
+}
+
+.carousel-nav {
+    position: absolute;
+    bottom: 30px; /* Sesuaikan jarak dari bawah */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.carousel-dots {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding: 8px 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.dot.active {
+    background: var(--primary-color);
+    transform: scale(1.2);
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+    .carousel-nav {
+        bottom: 15px; /* Even lower on mobile */
+        padding-bottom: 10px;
+    }
+    
+    /* Adjust the carousel container to accommodate the dots below */
+    .carousel-container {
+        padding-bottom: 60px; /* Add padding at the bottom of the container */
+        position: relative; /* Ensure positioning context */
+    }
+    
+    /* Make sure slide content doesn't push into dot area */
+    .hero-content {
+        padding-bottom: 20px;
+    }
 }

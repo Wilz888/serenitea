@@ -111,3 +111,210 @@ document.addEventListener('DOMContentLoaded', function() {
     button.setAttribute('href', 'javascript:void(0)');
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the menu toggle button and the navigation list
+    const menuToggle = document.getElementById('menu-toggle');
+    const navList = document.querySelector('.nav-list');
+    
+    // Add click event listener to the menu toggle button
+    menuToggle.addEventListener('click', function() {
+        // Toggle the active class on the navigation list
+        navList.classList.toggle('active');
+        
+        // Change the icon based on the state
+        const icon = menuToggle.querySelector('i');
+        if (navList.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+    
+    // Close the menu when clicking outside of it
+    document.addEventListener('click', function(event) {
+        const isClickInsideNav = navList.contains(event.target);
+        const isClickOnToggle = menuToggle.contains(event.target);
+        
+        if (!isClickInsideNav && !isClickOnToggle && navList.classList.contains('active')) {
+            navList.classList.remove('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+    
+    // Close menu when clicking a link (for better UX)
+    const navLinks = document.querySelectorAll('.nav-list a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navList.classList.remove('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        });
+    });
+});
+
+// Carousel functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dots = document.querySelectorAll('.dot');
+  let currentSlide = 0;
+  let interval;
+
+  // Function to change slide
+  function goToSlide(index) {
+      // Remove active class from all slides
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      
+      // Add active class to current slide
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+      
+      // Update current slide index
+      currentSlide = index;
+  }
+
+  // Auto slide function
+  function startAutoSlide() {
+      interval = setInterval(() => {
+          let nextSlide = (currentSlide + 1) % slides.length;
+          goToSlide(nextSlide);
+      }, 5000); // Change slide every 5 seconds
+  }
+
+  // Initialize auto slide
+  startAutoSlide();
+
+  // Event listeners for dots
+  dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+          clearInterval(interval);
+          goToSlide(index);
+          startAutoSlide();
+      });
+  });
+
+  // Pause auto slide on hover
+  const carouselContainer = document.querySelector('.carousel-container');
+  carouselContainer.addEventListener('mouseenter', () => {
+      clearInterval(interval);
+  });
+
+  carouselContainer.addEventListener('mouseleave', () => {
+      startAutoSlide();
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Testimonial Slider
+  const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+  const testimonialDots = document.querySelectorAll('.slider-dots .dot');
+  const sliderElement = document.querySelector('.testimonial-slider');
+  
+  let activeSlideIndex = 0;
+  let slideInterval;
+  let touchStartX = 0;
+  let touchEndX = 0;
+  let isTransitioning = false;
+  
+  // Fungsi untuk menampilkan slide tertentu
+  function showSlide(index) {
+    // Jangan lakukan apa-apa jika sedang dalam transisi
+    if (isTransitioning) return;
+    isTransitioning = true;
+    
+    // Validasi index
+    if (index >= testimonialSlides.length) index = 0;
+    if (index < 0) index = testimonialSlides.length - 1;
+    
+    // Sembunyikan semua slide
+    testimonialSlides.forEach(slide => {
+      slide.classList.remove('active');
+      slide.style.opacity = '0';
+      slide.style.transform = 'translateX(20px)';
+    });
+    
+    // Tampilkan slide yang aktif
+    testimonialSlides[index].classList.add('active');
+    testimonialSlides[index].style.opacity = '1';
+    testimonialSlides[index].style.transform = 'translateX(0)';
+    
+    // Update dots
+    testimonialDots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+    
+    // Update index aktif
+    activeSlideIndex = index;
+    
+    // Selesai transisi setelah animasi selesai
+    setTimeout(() => {
+      isTransitioning = false;
+    }, 500);
+  }
+  
+  // Event listener untuk dots
+  testimonialDots.forEach((dot, index) => {
+    dot.addEventListener('click', function() {
+      if (isTransitioning) return;
+      clearInterval(slideInterval);
+      showSlide(index);
+      startAutoSlide();
+    });
+  });
+  
+  // Fungsi untuk slideshow otomatis
+  function startAutoSlide() {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(() => {
+      if (!isTransitioning) {
+        showSlide(activeSlideIndex + 1);
+      }
+    }, 5000);
+  }
+  
+  // Touch events untuk swipe
+  if (sliderElement) {
+    sliderElement.addEventListener('touchstart', function(e) {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+    
+    sliderElement.addEventListener('touchmove', function(e) {
+      touchEndX = e.touches[0].clientX;
+    }, { passive: true });
+    
+    sliderElement.addEventListener('touchend', function() {
+      if (!touchStartX || !touchEndX || isTransitioning) return;
+      
+      const difference = touchStartX - touchEndX;
+      const threshold = 50;
+      
+      if (Math.abs(difference) > threshold) {
+        clearInterval(slideInterval);
+        showSlide(activeSlideIndex + (difference > 0 ? 1 : -1));
+        startAutoSlide();
+      }
+      
+      touchStartX = 0;
+      touchEndX = 0;
+    });
+  }
+  
+  // Window resize handler
+  window.addEventListener('resize', function() {
+    if (!isTransitioning) {
+      setTimeout(() => {
+        showSlide(activeSlideIndex);
+      }, 100);
+    }
+  });
+  
+  // Inisialisasi slider
+  showSlide(0);
+  startAutoSlide();
+});
