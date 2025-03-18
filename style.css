@@ -1118,23 +1118,23 @@ footer {
     background-color: var(--white);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
-    padding: 3rem;
+    padding: 3rem 1.5rem; /* Reduced horizontal padding for mobile */
     margin-bottom: 2rem;
 }
 
 .section-subtitle {
     text-align: center;
     max-width: 800px;
-    margin: 0 auto 40px;
+    margin: 0 auto 30px;
     color: #666;
     font-size: 1.1rem;
 }
 
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
 }
 
 .video-card {
@@ -1143,6 +1143,7 @@ footer {
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
 }
 
 .video-card:hover {
@@ -1198,7 +1199,7 @@ footer {
 }
 
 .video-thumbnail:hover .play-button {
-    background-color: #4CAF50; /* Green color for hover, you can match your brand color */
+    background-color: #4CAF50;
     transform: translate(-50%, -50%) scale(1.1);
 }
 
@@ -1216,7 +1217,7 @@ footer {
 }
 
 .video-info {
-    padding: 20px;
+    padding: 15px;
 }
 
 .video-info h3 {
@@ -1230,11 +1231,71 @@ footer {
     color: #666;
     margin-bottom: 0;
     line-height: 1.5;
+    font-size: 0.95rem;
 }
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
     .video-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .video-section {
+        padding: 2rem 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    
+    .play-button {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .play-button i {
+        font-size: 20px;
+    }
+    
+    .video-info h3 {
+        font-size: 1.1rem;
+    }
+    
+    .video-info p {
+        font-size: 0.9rem;
+    }
+}
+
+/* For very small screens */
+@media screen and (max-width: 350px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .play-button {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .play-button i {
+        font-size: 16px;
+    }
+    
+    .video-info {
+        padding: 12px;
+    }
+    
+    .video-info h3 {
+        font-size: 1rem;
+    }
+    
+    .video-info p {
+        font-size: 0.85rem;
     }
 }
