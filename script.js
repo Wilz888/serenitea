@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
       interval = setInterval(() => {
           let nextSlide = (currentSlide + 1) % slides.length;
           goToSlide(nextSlide);
-      }, 3000); // Change slide every 5 seconds
+      }, 5000); // Change slide every 5 seconds
   }
 
   // Initialize auto slide
@@ -318,3 +318,44 @@ document.addEventListener('DOMContentLoaded', function() {
   showSlide(0);
   startAutoSlide();
 });
+
+// Add this to your existing script.js file
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Video handling
+  setupVideoPlayers();
+});
+
+function setupVideoPlayers() {
+  // Setup for brewing video
+  const brewingThumbnail = document.querySelector('#brewing-video-container').previousElementSibling;
+  if (brewingThumbnail) {
+      brewingThumbnail.addEventListener('click', function() {
+          const videoContainer = document.getElementById('brewing-video-container');
+          videoContainer.innerHTML = `
+              <video controls autoplay style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                  <source src="video/video1.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+              </video>
+          `;
+          videoContainer.classList.add('active');
+          this.style.display = 'none';
+      });
+  }
+
+  // Setup for Lohankuo video
+  const lohankuoThumbnail = document.querySelector('#lohankuo-video-container').previousElementSibling;
+  if (lohankuoThumbnail) {
+      lohankuoThumbnail.addEventListener('click', function() {
+          const videoContainer = document.getElementById('lohankuo-video-container');
+          videoContainer.innerHTML = `
+              <video controls autoplay style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                  <source src="path/to/your/lohankuo-video.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+              </video>
+          `;
+          videoContainer.classList.add('active');
+          this.style.display = 'none';
+      });
+  }
+}
