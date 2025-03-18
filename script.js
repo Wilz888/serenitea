@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
       interval = setInterval(() => {
           let nextSlide = (currentSlide + 1) % slides.length;
           goToSlide(nextSlide);
-      }, 5000); // Change slide every 5 seconds
+      }, 3000); // Change slide every 5 seconds
   }
 
   // Initialize auto slide
