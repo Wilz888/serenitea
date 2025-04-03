@@ -350,7 +350,7 @@ function setupVideoPlayers() {
           const videoContainer = document.getElementById('lohankuo-video-container');
           videoContainer.innerHTML = `
               <video controls autoplay style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                  <source src="path/to/your/lohankuo-video.mp4" type="video/mp4">
+                  <source src="video/lohan.mp4" type="video/mp4">
                   Your browser does not support the video tag.
               </video>
           `;
